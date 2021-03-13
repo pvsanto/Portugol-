@@ -1,0 +1,74 @@
+programa {
+	funcao inicio() {
+		
+		
+		/*
+		\\  Programa    para    receber notas   dos alunos  e   média   
+		\\  recebe     4notas   
+		\\
+		\\
+		*/
+		
+		//Variaveis e   constantes  
+		const inteiro   TamanhoTurma = 2,
+		provas = 3 
+		cadeia  nomes[TamanhoTurma]
+		real    mediaAG[TamanhoTurma]
+        real    mediaT  = 0
+        real    mediaA  =   0
+        real    notas[TamanhoTurma][provas]
+        inteiro opcaoUsuario    
+		
+
+		faca{
+		escreva("EScolha uma    opção   \n  1   -   adicionar   aluno   \n  2   -   listar  alunos  \n  3   -   media   da  turma   e   dos alunos \n 0   -   SAIR \n")
+		leia    (opcaoUsuario)
+		
+		escolha(opcaoUsuario )
+		{
+		    caso    0:escreva("Saindo   do  projEto") pare    
+		    //adicionara    aluno   e   notas
+		    caso    1:
+		    
+		    
+        		para(inteiro    i   =   0;  i   <   TamanhoTurma    ;   i++ ){
+        	    escreva("Nome   do  aluno:  ")
+                leia(nomes[i])
+                    para(inteiro    k   =   0 ;  k   <   provas  ;  k++ ){
+                        
+                    escreva("Nota   da  Prova "+(k+1)+" : ")
+                    leia(notas[i][k])
+                    
+                        mediaAG[i]   += notas[i][k]  
+                    }
+        		}
+		    pare
+		    
+		    //Listar    alunos
+		    caso    2:
+		    
+		    
+		    
+		    
+		    //Mostar    média   da  turma   e   do  aluno   
+		    caso    3:
+		    
+		    para(inteiro i  =   0   ;   i < TamanhoTurma;  i++){
+		        
+            mediaAG[i]  =  ((mediaAG[i])/provas)
+            escreva("Nome Aluno:  "+nomes[i]+" média: "+    mediaAG[i]    +"\n")
+            mediaT  +=  mediaAG[i]
+		    }
+		    
+            escreva(" Média TURMA: "+(mediaT/TamanhoTurma)+"\n")
+		    
+		    pare
+		    
+		    caso    contrario :
+		    escreva("Opção  Ínvalida    !   !   ")
+		    
+		}
+        
+		}enquanto(opcaoUsuario  !=  0)
+	}
+}
