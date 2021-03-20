@@ -1,0 +1,36 @@
+programa {
+	funcao inicio() {
+	    
+	    
+	    //variaveis de inicialização
+	    const inteiro turma = 5, prova = 4
+	    
+	    cadeia  nomes[turma]
+	    real    notas[turma][prova]
+	    real    mediaAluno[turma]
+	    real    mediaTurma = 0.0
+	    
+	    para(inteiro i = 0 ; i < turma; i++)
+	    {
+	    escreva("Nome do aluno: ")
+	    leia(nomes[i])
+        	    para(inteiro k = 0; k < prova ; k++)
+        	    {
+        	    escreva("Nota da Prova "+k+": ")
+        	    leia(notas[i][k])   
+        	    }
+             mediaAluno[i]   +=  ((notas[i][0]+notas[i][1])/prova)
+	    mediaTurma  += mediaAluno[i]
+	    }
+	    
+	    para(inteiro n = 0 ; n < turma ; n++){
+	        
+	        escreva("Nome do Aluno: "+nomes[n]+" Média "+mediaAluno[n]+"\n")
+	       
+	    }
+	    
+	    mediaTurma  = (mediaTurma/turma)
+	    escreva("média da classe: "+mediaTurma)
+	    
+	}
+}
